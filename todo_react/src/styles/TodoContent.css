@@ -1,0 +1,50 @@
+.todo-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 20px 20px 20px 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 1%;
+
+}
+
+.todo-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.todo-item-icon {
+  margin-right: 8px;
+}
+
+.todo-item-delete {
+  margin-left: auto;
+}
+
+.todo-item-text.done {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-form {
+  margin: 20px 20px 20px 20px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.todo-form .MuiTextField-root {
+  flex: 1;
+}
+
+.todo-form .MuiIconButton-root {
+  margin-left: 8px;
+}
