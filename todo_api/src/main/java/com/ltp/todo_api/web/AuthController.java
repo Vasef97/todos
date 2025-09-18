@@ -17,10 +17,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+@Tag(name = "Auth")
 public class AuthController extends BaseController {
 
     private final UserRepository userRepository;
@@ -35,6 +38,7 @@ public class AuthController extends BaseController {
         this.authenticationManager = authenticationManager;
     }
 
+    @Operation(summary = "Register new user")
     @PostMapping("/register")
     public ResponseEntity<ApiResponse<User>> register(
             @Valid @RequestBody User user,
@@ -65,6 +69,7 @@ public class AuthController extends BaseController {
         );
     }
 
+    @Operation(summary = "Login user")
     @PostMapping("/login")
     public ResponseEntity<ApiResponse<User>> login(
             @Valid @RequestBody LoginRequest creds,
@@ -106,6 +111,7 @@ public class AuthController extends BaseController {
         );
     }
 
+    @Operation(summary = "Get current user")
     @GetMapping("/me")
     public ResponseEntity<ApiResponse<User>> me(Authentication authentication) {
         User user = userRepository.findByUsername(authentication.getName())
@@ -118,6 +124,7 @@ public class AuthController extends BaseController {
         );
     }
 
+    @Operation(summary = "Delete current user")
     @DeleteMapping("/me")
     public ResponseEntity<ApiResponse<Void>> deleteMe(
             Authentication authentication,
