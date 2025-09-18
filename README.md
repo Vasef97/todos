@@ -1,6 +1,16 @@
 # todos
 Usage Instructions
 
+Backend (Spring Boot API)
+
+Open a new terminal and navigate to the Spring project directory.
+
+On Linux or macOS run ./mvnw spring-boot:run On Windows run mvnw.cmd spring-boot:run
+
+Alternatively, launch the SpringBootApplication class from your IDE.
+
+Navigation React UI: http://localhost:5173 API root (health check, etc.): http://localhost:8080/ H2 console: http://localhost:8080/h2-console JDBC URL: jdbc:h2:mem:todo User: sa (leave password blank unless you have configured one) Swagger UI: http://localhost:8080/swagger-ui.html or http://localhost:8080/swagger-ui/index.html
+
 Frontend (React + Vite)
 
 Open a terminal and navigate to the React app directory.
@@ -11,15 +21,6 @@ Run npm run dev to start the development server.
 
 Open your browser at http://localhost:5173 to view the UI.
 
-Backend (Spring Boot API)
-
-Open a new terminal and navigate to the Spring project directory.
-
-On Linux or macOS run ./mvnw spring-boot:run On Windows run mvnw.cmd spring-boot:run
-
-Alternatively, launch the SpringBootApplication class from your IDE.
-
-Navigation React UI: http://localhost:5173 API root (health check, etc.): http://localhost:8080/ H2 console: http://localhost:8080/h2-console JDBC URL: jdbc:h2:mem:todo User: sa (leave password blank unless you have configured one) Swagger UI: http://localhost:8080/swagger-ui.html or http://localhost:8080/swagger-ui/index.html
 
 Once both frontend and backend are running, the React app will communicate with the Spring API. You can experiment with data directly in the H2 console and test all endpoints interactively via Swagger.
 
